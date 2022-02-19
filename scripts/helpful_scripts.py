@@ -1,4 +1,4 @@
-from brownie import accounts, network, config, LinkToken, VRFCoordinatorMock, Contract
+from brownie import accounts, network, config
 from web3 import Web3
 
 FORKED_LOCAL_ENVIRONMENTS = ["mainnet-fork"]

@@ -2,23 +2,22 @@
 pragma solidity ^0.8.2;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract MyToken_Priced is ERC721, Ownable {
+contract BasicNFT_Priced is ERC721 {
     using Counters for Counters.Counter;
 
     Counters.Counter private _tokenIdCounter;
 
     constructor() ERC721("MyToken", "MTK") {}
 
-    uint256 mintPrice;
+    uint256 mintFee;
 
     function safeMint() public payable {
-        require(msg.value > mintPrice, "Pay X ETH to mint.");
+        require(msg.value > mintFee, "Pay X ETH to mint.");
 
-        uint256 change = msg.value - mintPrice;
-        msg.sender.transfer(change);
+        uint256 change = msg.value - mintFee;
+        payable(msg.sender).transfer(change);
 
         address to = msg.sender;
         uint256 tokenId = _tokenIdCounter.current();
