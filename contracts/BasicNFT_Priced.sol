@@ -7,9 +7,11 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 contract BasicNFT_Priced is ERC721 {
     using Counters for Counters.Counter;
 
-    Counters.Counter private _tokenIdCounter;
+    Counters.Counter public _tokenIdCounter;
 
-    constructor() ERC721("MyToken", "MTK") {}
+    constructor() ERC721("MyToken", "MTK") {
+        mintFee = 1 * 10**18;
+    }
 
     uint256 mintFee;
 

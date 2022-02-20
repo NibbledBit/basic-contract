@@ -9,15 +9,14 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 contract BasicNFT_SetToken is ERC721, ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
 
-    Counters.Counter private _tokenIdCounter;
+    Counters.Counter public _tokenIdCounter;
 
     constructor() ERC721("MyToken", "MTK") {}
 
-    function safeMint(address to, string memory uri) public {
+    function safeMint() public {
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
-        _safeMint(to, tokenId);
-        _setTokenURI(tokenId, uri);
+        _safeMint(msg.sender, tokenId);
     }
 
     function setTokenUri(uint256 tokenId, string memory uri) public onlyOwner {
