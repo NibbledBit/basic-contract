@@ -29,7 +29,7 @@ def test_whitelist_bad():
         "0xd8490bd55bfd05ce0e6209f96e3ca523dcadb2375435e63fbab8d7666b451116",
         "0x09ad0ca0b27030ef969a7c4d013e89326e2fcbe3b9e09c4d6edadbab003f56a6",
     ]
-    minter = "0xdd74C74Ba0079983A80d2A9Ceb7eFbC95232234e"
+    # minter = "0xdd74C74Ba0079983A80d2A9Ceb7eFbC95232234e"
 
     deploy_nft(BasicNFT_Whitelist)
     nft = BasicNFT_Whitelist[-1]
