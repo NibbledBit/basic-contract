@@ -10,7 +10,7 @@ def test_deploy():
     assert nft is not None
 
 
-def test_priced_good():
+def test_whitelist_good():
     proof = [
         "0xd8490bd55bfd05ce0e6209f96e3ca523dcadb2375435e63fbab8d7666b451116",
         "0x09ad0ca0b27030ef969a7c4d013e89326e2fcbe3b9e09c4d6edadbab003f56a6",
@@ -24,7 +24,7 @@ def test_priced_good():
     assert nft._tokenIdCounter() > 0
 
 
-def test_priced_bad():
+def test_whitelist_bad():
     proof = [
         "0xd8490bd55bfd05ce0e6209f96e3ca523dcadb2375435e63fbab8d7666b451116",
         "0x09ad0ca0b27030ef969a7c4d013e89326e2fcbe3b9e09c4d6edadbab003f56a6",
